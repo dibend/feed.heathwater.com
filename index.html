@@ -16,22 +16,20 @@
                 background-color: black; /* Background color set to black */
             }
 
-            /* Ensure that the iframe takes up the full screen */
-            iframe {
-                display: block;
-                border: none;
-                width: 100vw;
-                height: calc(100vh - 200px); /* Adjust iframe height to leave space for header */
-            }
-
-            /* Styling for the header with image and text */
+            /* Styling for the header with fixed text */
             header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: black; /* Make header background match the page */
+                z-index: 100; /* Ensure it stays on top of other elements */
                 text-align: center;
                 color: white; /* Text color set to white for visibility */
-                padding: 20px 0;
+                padding: 10px 0;
             }
 
-            /* Optional: Add some padding for the <h4> */
+            /* h4 text stays fixed */
             h4 {
                 margin: 0;
             }
@@ -44,19 +42,39 @@
             a:hover {
                 text-decoration: underline;
             }
+
+            /* Content below the fixed header */
+            .content {
+                margin-top: 80px; /* Space for the header */
+                height: calc(100vh - 80px); /* Subtract header height */
+                overflow-y: scroll; /* Allow scrolling for the iframe content */
+            }
+
+            /* Style for the iframe to display full width */
+            iframe {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
         </style>
     </head>
     <body>
-        <!-- Add the header section with image and text -->
+        <!-- Scrolling GIF section -->
+        <div style="text-align: center; padding-top: 20px;">
+            <!-- The GIF will scroll off the screen -->
+            <img src="njweb.gif" alt="NJWeb Logo" style="max-width: 200px; height: auto;">
+        </div>
+
+        <!-- Fixed header with text -->
         <header>
-            <!-- Add the image at the top of the page -->
-            <img src="njweb.gif" alt="NJWeb Logo">
-            <!-- Add the h4 heading with the link -->
             <h4>Made by <a href="https://njweb.solutions">NJWeb.Solutions</a></h4>
         </header>
 
-        <!-- Main content as an iframe -->
-        <iframe src="https://45c0bd0c580e9780b9.gradio.live" allowfullscreen></iframe>
+        <!-- Main content area that scrolls below the header -->
+        <div class="content">
+            <iframe src="https://fd64c44afc37ccbeae.gradio.live" allowfullscreen></iframe>
+        </div>
     </body>
     </html>
     
