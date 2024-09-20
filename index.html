@@ -6,23 +6,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Investing News RSS Aggregator</title>
         <style>
+            /* Set the background to black */
             html, body {
                 margin: 0;
                 padding: 0;
                 height: 100%;
                 width: 100%;
                 overflow: hidden;
+                background-color: black; /* Background color set to black */
             }
+
+            /* Ensure that the iframe takes up the full screen */
             iframe {
                 display: block;
                 border: none;
                 width: 100vw;
-                height: 100vh;
+                height: calc(100vh - 200px); /* Adjust iframe height to leave space for header */
+            }
+
+            /* Styling for the header with image and text */
+            header {
+                text-align: center;
+                color: white; /* Text color set to white for visibility */
+                padding: 20px 0;
+            }
+
+            /* Optional: Add some padding for the <h4> */
+            h4 {
+                margin: 0;
+            }
+
+            /* Link styling */
+            a {
+                color: lightblue;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
             }
         </style>
     </head>
     <body>
-        <iframe src="https://5b5a82e0994d7f1118.gradio.live" allowfullscreen></iframe>
+        <!-- Add the header section with image and text -->
+        <header>
+            <!-- Add the image at the top of the page -->
+            <img src="njweb.gif" alt="NJWeb Logo">
+            <!-- Add the h4 heading with the link -->
+            <h4>Made by <a href="https://njweb.solutions">NJWeb.Solutions</a></h4>
+        </header>
+
+        <!-- Main content as an iframe -->
+        <iframe src="https://8591422ea66866a88a.gradio.live" allowfullscreen></iframe>
     </body>
     </html>
     
