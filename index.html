@@ -12,45 +12,49 @@
                 padding: 0;
                 height: 100%;
                 width: 100%;
-                overflow: hidden;
                 background-color: black; /* Background color set to black */
+                overflow-x: hidden;
             }
 
-            /* Styling for the header with fixed text */
-            header {
+            /* Styling for the fixed text */
+            .fixed-header {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
-                background-color: black; /* Make header background match the page */
-                z-index: 100; /* Ensure it stays on top of other elements */
+                background-color: black;
+                z-index: 100;
                 text-align: center;
-                color: white; /* Text color set to white for visibility */
+                color: white;
                 padding: 10px 0;
             }
 
-            /* h4 text stays fixed */
             h4 {
                 margin: 0;
             }
 
-            /* Link styling */
             a {
                 color: lightblue;
                 text-decoration: none;
             }
+
             a:hover {
                 text-decoration: underline;
             }
 
-            /* Content below the fixed header */
+            /* Ensure content below header and allow scrolling */
             .content {
-                margin-top: 80px; /* Space for the header */
-                height: calc(100vh - 80px); /* Subtract header height */
-                overflow-y: scroll; /* Allow scrolling for the iframe content */
+                padding-top: 60px; /* Leave space for the fixed header */
+                overflow-y: scroll;
+                height: calc(100vh - 60px);
             }
 
-            /* Style for the iframe to display full width */
+            /* Image will scroll with the content */
+            .scrolling-image {
+                text-align: center;
+                padding: 20px 0;
+            }
+
             iframe {
                 display: block;
                 width: 100%;
@@ -60,20 +64,20 @@
         </style>
     </head>
     <body>
-        <!-- Scrolling GIF section -->
-        <div style="text-align: center; padding-top: 20px;">
-            <!-- The GIF will scroll off the screen -->
-            <img src="njweb.gif" alt="NJWeb Logo" style="max-width: 200px; height: auto;">
+        <!-- Fixed header with text -->
+        <div class="fixed-header">
+            <h4>Made by <a href="https://njweb.solutions">NJWeb.Solutions</a></h4>
         </div>
 
-        <!-- Fixed header with text -->
-        <header>
-            <h4>Made by <a href="https://njweb.solutions">NJWeb.Solutions</a></h4>
-        </header>
-
-        <!-- Main content area that scrolls below the header -->
+        <!-- Scrolling content -->
         <div class="content">
-            <iframe src="https://fd64c44afc37ccbeae.gradio.live" allowfullscreen></iframe>
+            <!-- Image that scrolls off screen -->
+            <div class="scrolling-image">
+                <img src="njweb.gif" alt="NJWeb Logo" style="max-width: 200px; height: auto;">
+            </div>
+
+            <!-- Main content area (Gradio iframe) -->
+            <iframe src="https://bd56a218e937bb8eb1.gradio.live" allowfullscreen></iframe>
         </div>
     </body>
     </html>
